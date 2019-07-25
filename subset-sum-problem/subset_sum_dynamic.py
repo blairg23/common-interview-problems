@@ -16,7 +16,7 @@ def Q(x, i, s):
     :return bool: Given a list X, returns a boolean value if there is a nonempty subset of X_1,...,X_i which sums to S.
     """
     if i == 0:
-        print(f'Base Case: Checking if {x[i]} == {s}')
+        print(f'Q({i}, {s}) => Base Case: Checking if {x[i]} == {s}')
         if x[i] == s:
             print('Result: True')
             print('\n')
@@ -26,14 +26,14 @@ def Q(x, i, s):
             print('\n')
             return False
 
-    print(f'Checking if Q({i - 1}, {s}) or ({x[i]} == {s}) or Q({i - 1}, {s - x[i]})\n')
+    print(f'Q({i}, {s}) => Checking if Q({i - 1}, {s}) or ({x[i]} == {s}) or Q({i - 1}, {s - x[i]})\n')
     if Q(x, i - 1, s) or (x[i] == s) or Q(x, i - 1, s - x[i]):
-        print(f'Checked if Q({i - 1}, {s}) or ({x[i]} == {s}) or Q({i - 1}, {s - x[i]})')
+        print(f'Q({i}, {s}) => Checked if Q({i - 1}, {s}) or ({x[i]} == {s}) or Q({i - 1}, {s - x[i]})')
         print('Result: True')
         print('\n')
         return True
     else:
-        print(f'Checked if Q({i - 1}, {s}) or ({x[i]} == {s}) or Q({i - 1}, {s - x[i]})')
+        print(f'Q({i}, {s}) => Checked if Q({i - 1}, {s}) or ({x[i]} == {s}) or Q({i - 1}, {s - x[i]})')
         print('Result: False')
         print('\n')
         return False
