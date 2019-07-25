@@ -17,9 +17,9 @@ if __name__ == '__main__':
     S = requested_sum = 0
     X = list_of_integers = [random.randint(min_integer, max_integer) for i in range(N)]
 
-    print(X)
+    print(f'X: {X}')
 
-    integer_pairs = []
+    integer_pairs = set()
 
     for integer_x in range(N):
         for integer_y in range(N):
@@ -27,6 +27,6 @@ if __name__ == '__main__':
                 list_of_integers_x = X[integer_x]
                 list_of_integers_y = X[integer_y]
                 if (list_of_integers_x + list_of_integers_y) == requested_sum:
-                    integer_pairs.append((list_of_integers_x, list_of_integers_y))
+                    integer_pairs.add(tuple(sorted([list_of_integers_x, list_of_integers_y])))
 
-    print(integer_pairs)
+    print(f'Unique pairs of integers adding up to S={S}: {integer_pairs}')
