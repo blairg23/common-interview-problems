@@ -1,10 +1,20 @@
 """
+From https://en.wikipedia.org/wiki/Subset_sum_problem
+
 Solves a basic subset sum problem using dynamic programming.
 
 The subset sum problem is this:
 
 Given a list X and index i, is there a nonempty subset of X_1,...,X_i which sums to S?
+
+Solves in O(N(B - A))
+where
+A = sum of negative values in X
+B = sum of positive values in X.
+and
+A <= S <= B
 """
+
 import random
 
 
@@ -40,12 +50,12 @@ def Q(x, i, s):
 
 
 if __name__ == '__main__':    
-    N = number_of_integers = 123
-    max_integer = 10
+    N = 123  # number of integers
     min_integer = -10
-    S = requested_sum = 0
-    X = list_of_integers = [random.randint(min_integer, max_integer) for i in range(number_of_integers)]
-    index = 5
+    max_integer = 10
+    S = 0  # initial sum to achieve
+    X = [random.randint(min_integer, max_integer) for i in range(N)]  # list of random integers from min_integer to max_integer
+    index = 3
 
     print('---------------------------------------')
 
