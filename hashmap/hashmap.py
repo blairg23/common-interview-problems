@@ -24,11 +24,11 @@ class HashMap:
                     return None
 
     def put(self, key, value):
-        nd = Node(key, value)
+        node = Node(key, value)
         index = hash(key) & 15
         n = self.store[index]
         if n is None:
-            self.store[index] = nd
+            self.store[index] = node
         else:
             if n.key == key:
                 n.value = value
@@ -39,7 +39,7 @@ class HashMap:
                         return
                     else:
                         n = n.next
-                n.next = nd
+                n.next = node
 
 
 if __name__ == '__main__':
