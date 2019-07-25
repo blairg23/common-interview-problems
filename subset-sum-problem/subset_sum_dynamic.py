@@ -1,3 +1,10 @@
+"""
+Solves a basic subset sum problem using dynamic programming.
+
+The subset sum problem is this:
+
+Given a list X and index i, is there a nonempty subset of X_1,...,X_i which sums to S?
+"""
 import random
 
 
