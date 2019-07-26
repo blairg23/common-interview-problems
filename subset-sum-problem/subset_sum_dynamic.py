@@ -59,11 +59,11 @@ if __name__ == '__main__':
 
     print('---------------------------------------')
 
-    print(f'List of N={N} random integers, X, where {min_integer} <= X_i <= {max_integer}: {X}')
+    print(f'List of N={N} random integers, X, where {min_integer} <= X_i <= {max_integer}: {X}\n')
 
-    print(f'S={S}')
+    print(f'S={S}\n')
 
-    print(f'Trying index = {index}')
+    print(f'Trying index = {index}\n')
 
     result = Q(x=X, i=index, s=S)
 

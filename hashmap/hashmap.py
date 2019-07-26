@@ -1,3 +1,8 @@
+"""
+Stolen shamelessly from https://stackoverflow.com/a/50206316/1224827
+"""
+
+
 class Node:
     def __init__(self, key, value):
         self.key = key

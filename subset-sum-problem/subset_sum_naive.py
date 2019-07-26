@@ -20,12 +20,13 @@ if __name__ == '__main__':
     max_integer = 10
     S = 0  # initial sum to achieve
     X = [random.randint(min_integer, max_integer) for i in range(N)]  # list of random integers from min_integer to max_integer
+    integer_pairs = set()  # Set to hold the unique pairs of integers that sum to zero
 
     print('---------------------------------------')
 
-    print(f'List of N={N} random integers, X, where {min_integer} <= X_i <= {max_integer}: {X}')
+    print(f'List of N={N} random integers, X, where {min_integer} <= X_i <= {max_integer}: {X}\n')
 
-    integer_pairs = set()
+    print(f'S={S}\n')
 
     for integer_x in range(N):
         for integer_y in range(N):

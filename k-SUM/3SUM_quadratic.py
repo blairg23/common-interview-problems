@@ -15,13 +15,15 @@ if __name__ == '__main__':
     min_integer = -10
     max_integer = 10
     S = [random.randint(min_integer, max_integer) for i in range(N)]  # list of random integers from min_integer to max_integer
-    integer_triples = set()
+    integer_triples = set()  # Set to hold the unique triples of integers that sum to zero
 
     print('---------------------------------------')
 
-    print(f'List of N={N} random integers, S, where {min_integer} <= S_i <= {max_integer}: {S}')
+    print(f'List of N={N} random integers, S, where {min_integer} <= S_i <= {max_integer}: {S}\n')
 
     S = sorted(S)
+
+    print(f'S, sorted: {S}\n')
 
     for i in range(0, N-2):
         a = S[i]

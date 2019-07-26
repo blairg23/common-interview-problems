@@ -17,7 +17,7 @@ if __name__ == '__main__':
     max_integer = 10
     S = [random.randint(min_integer, max_integer) for i in range(N)]  # list of random integers from min_integer to max_integer
     hashtable = {}
-    integer_triples = set()
+    integer_triples = set()  # Set to hold the unique triples of integers that sum to zero
 
     print('---------------------------------------')
 
