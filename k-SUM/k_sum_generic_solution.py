@@ -36,7 +36,7 @@ class KSum:
         if k <= 1:
             k_integers = []
             if k == 1 and numbers.index(target) >= 0:
-                k_integers.append(target)
+                k_integers.append([target])
             return k_integers
         return self._k_sum_helper(numbers=numbers, k=k, target=target, begin_index=0)
 
@@ -57,7 +57,7 @@ class KSum:
             while (left < right):
                 number_sum = numbers[left] + numbers[right]
                 if number_sum == target:
-                    k_integers.append((numbers[left], numbers[right]))
+                    k_integers.append([numbers[left], numbers[right]])
                     while left < right and numbers[left] == numbers[left + 1]:
                         left += 1
                     while left < right and numbers[right] == numbers[right - 1]:
@@ -77,8 +77,9 @@ class KSum:
             if (numbers[i] + (k - 1) * numbers[i + 1] > target):
                 break
             sub = self._k_sum_helper(numbers=numbers, k=k-1, target=target - numbers[i], begin_index=i+1)
-            sub.insert(0, numbers[i])
-            k_integers.append(sub)
+            for sub_list in sub:
+                sub_list.insert(0, numbers[i])
+            k_integers.extend(sub)
         return k_integers
 
 
